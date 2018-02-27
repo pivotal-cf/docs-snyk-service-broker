@@ -1,28 +1,40 @@
 ---
-title: Installing and Configuring YOUR-PRODUCT-NAME
+title: Installing and Configuring Snyk Service Broker for PCF
 owner: Partners
 ---
 
-This topic describes how to install and configure YOUR-PRODUCT-NAME.
+This topic describes how to install and configure Snyk Service Broker for PCF.
 
-##<a id='install'></a> Install and Configure YOUR-PRODUCT-NAME
+##<a id='install'></a> Install and Configure Snyk Service Broker for PCF
 
 1. Download the product file from Pivotal Network.
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file. 
 
-1. Under the **Import a Product** button, click **+** next to the version number of YOUR-PRODUCT-NAME. 
+1. Under the **Import a Product** button, click **+** next to the version number of Snyk Service Broker for PCF. 
 This adds the tile to your staging area.
 
-1. Click the newly added **YOUR-PRODUCT-NAME** tile.
-
-1. **This portion of the procedure should tell the users how to configure the newly added tile by
-walking them through the sections. Which fields should they fill out? What are the different
-checkboxes? Include relevant screenshots here.** 
+1. Click the newly added **Snyk Service Broker for PCF** tile. See [Configure the Snyk Service Broker](installing.html#configure-tile) section below for configuration information.
 
 1. Click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install YOUR-PRODUCT-NAME tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply changes** to install Snyk Service Broker for PCF tile.
 
-**If needed, include additional configuration information below. For example, maybe there are
-configuration options not required for installation but which could be useful for certain users.**
+##<a id='configure-tile'></a>Configure Snyk Service Broker for PCF
+
+Perform the following steps to configure the Snyk Service Broker tile:
+
+1. In Pivotal Ops Manager, click the **Snyk Service Broker** tile to open its configuration options.  <img src="images/snyk_tile.png"></img>
+
+1. Log in to Snyk account and navigate to ["My Account"](https://snyk.io/account/) and copy your API token.  <img src="images/account_settings.png"></img>
+
+1. Click SaaS/Managed Plans, and click the **Add** button at the upper right to add a service plan.  <img src="images/service_plan.png"></img>
+
+1. Paste your **Snyk API Token** to your service plan Snyk Token field.
+
+1. Leave **Snyk API Url** and **Snyk Organisation Name** empty.
+
+1. Click **Save**.
+
+1. Click **Apply Changes**.
+
