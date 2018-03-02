@@ -3,15 +3,12 @@ title: Snyk Service Broker (Beta)
 owner: Partners
 ---
 
-<p class="note warning">
-<strong>WARNING! </strong>
-The Snyk Service Broker for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
-Do not use this product in a PCF production environment.
-</p>
+<p class="note warning"><strong>WARNING:</strong> The Snyk Service Broker for PCF tile is currently in beta and is intended for evaluation and test purposes only. 
+Do not use this product in a PCF production environment.</p>
 
 This documentation describes the Snyk Service Broker for Pivotal Cloud Foundry (PCF). The Snyk Service 
 Broker for PCF enables developers to scan their droplets for known vulnerabilities in open source components. 
-In addtion the Snyk Service Broker for PCF allows for continuously monitoring droplets for new vulnerabilities as well as preventing the deployment of vulnerable droplets.
+In addition, the Snyk Service Broker for PCF allows you to continuously monitor droplets for new vulnerabilities as well as preventing the deployment of vulnerable droplets.
 
 ## <a id='overview'></a>Overview
 
@@ -19,11 +16,11 @@ The Snyk Service Broker for PCF registers a service broker with PCF and exposes 
 Marketplace. Developers can then create service plan instances using Apps Manager or the Cloud Foundry Command 
 Line Interface (cf CLI) and bind them to their apps.
 
-Creating a Snyk Service Broker for PCF service instance and binding it to an app will trigger Snyk to run scans on your app dependencies as part of the buildpack. Using environment variables, you can control whether to continuously monitor your app, reject a vulnerable droplet or patch the vulnerabilities inside your app.
+Creating a Snyk Service Broker for PCF service instance and binding it to an app will trigger Snyk to run scans on your app dependencies as part of the buildpack. Using environment variables, you can decide whether to continuously monitor your app, reject a vulnerable droplet, or patch the vulnerabilities inside your app.
 
 ## <a id='features'></a>Key Features
 
-Snyk Service Broker includes the following key features:
+Snyk Service Broker for PCF includes the following key features:
 
 * Scan your app dependencies for known vulnerabilities 
 * Continuously monitor your app dependencies for new vulnerabilities
@@ -32,7 +29,9 @@ Snyk Service Broker includes the following key features:
 
 ## <a id="snapshot"></a>Product Snapshot
 
-The following table provides version and version-support information about Snyk Service Broker.
+<p class='note'><strong>Note:</strong> As of PCF v2.0, Elastic Runtime is renamed Pivotal Application Service (PAS).</p>
+
+The following table provides version and version-support information about Snyk Service Broker for PCF.
 
 <table class="nice">
         <th>Element</th>
@@ -54,7 +53,7 @@ The following table provides version and version-support information about Snyk 
         <td>v1.11.x, v1.12.x, and v2.0.x??</td>
     </tr>
     <tr>
-        <td>Compatible Pivotal Application Service (formerly Elastic Runtime) version(s)</td>
+        <td>Compatible Pivotal Application Service version(s)</td>
         <td>v1.11.x, v1.12.x, and v2.0.x??</td>
     </tr>
     <tr>
@@ -70,7 +69,7 @@ The following table provides version and version-support information about Snyk 
 
 Snyk Service Broker has the following requirements:
 
-+ A free or paid Snyk account (sign up at https://snyk.io)
++ A free or paid Snyk account. Sign up at [Snyk.io](https://snyk.io).
 
 ## <a id="limitations"></a>Limitations
 
