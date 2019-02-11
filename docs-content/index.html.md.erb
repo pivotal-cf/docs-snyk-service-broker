@@ -3,6 +3,11 @@ title: Snyk Service Broker
 owner: Partners
 ---
 
+<p class="note warning"><strong> WARNING:</strong>
+This tile requires a Trusty stemcell.
+The end of life date for Ubuntu Trusty is April 2019.
+If a security vulnerability is found on this stemcell after April, it will not be fixed.</p>
+
 This documentation describes the Snyk Service Broker for Pivotal Cloud Foundry (PCF). The Snyk Service
 Broker for PCF enables developers to scan their droplets for known vulnerabilities in open source components.
 In addition, the Snyk Service Broker for PCF allows you to continuously monitor droplets for new vulnerabilities as well as preventing the deployment of vulnerable droplets.
@@ -52,6 +57,10 @@ The following table provides version and version-support information about Snyk 
     <tr>
         <td>Compatible Pivotal Application Service version(s)</td>
         <td>v2.0.x, v2.1.x, v2.2.x, and v2.3.x</td>
+    </tr>
+    <tr>
+       <td>BOSH stemcell version</td>
+       <td>Ubuntu Trusty</td>
     </tr>
     <tr>
         <td>IaaS support</td>
