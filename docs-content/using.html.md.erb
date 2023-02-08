@@ -10,45 +10,48 @@ To use the Snyk Service Broker for VMware Tanzu with an application, create a se
 to your application. For more information on managing service instances, see <a href="http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html" target="_blank">Managing Service Instances with the cf CLI</a>.
 
 After the Snyk tile is installed, you can see the `snyk-service-broker` and its service plans appear in your VMware Tanzu marketplace. Run `cf marketplace` to see the service listing:
-<pre class="terminal">
+
+```
 $ cf marketplace
 Getting services from marketplace in org snyk / space snyk as admin...
 OK
 service              plans                                           description
 snyk-service-broker  enterprise-plan    Snyk service broker for testing and monitoring security vulnerabilities and license issues in your app.
-</pre>
+```
 
 For more information on available service plans, see the [Configure Service Plans](./installing.html#configure-tile) topic.
 ### Create a Service Instance
 
 To provision a Snyk service instance, run `cf create-service`. For example:
 
-<pre class="terminal">
+```
 $ cf create-service snyk-service-broker enterprise-plan my-snyk-service
 Getting services from marketplace in org snyk / space snyk as admin...
 OK
 name              service               plan              bound apps   last operation
 my-snyk-service   snyk-service-broker   enterprise-plan                create succeeded
-</pre>
+```
 
 Run the `cf services` command to view the creation status. This command displays a list of all your service instances. To view the status of a specific service instance, run `cf service NAME-OF-YOUR-SERVICE`.
 ### Bind an Application to a Service Instance
 
 After your Snyk service instance is created, run `cf bind-service` to bind the service to your application:
 
-<pre class="terminal">
+```
 $ cf bind-service my-app my-snyk-service
-</pre>
+```
+
 ### Restage or Restart Your Application
 
 To enable your application to access the service instance, run `cf restage` or `cf restart` to restage or restart your application.
+
 ### Obtain Service Instance Access Credentials
 
 After a service instance is bound to an application, Snyk credentials are stored in the environment variables of the application. Run `cf env APP-NAME` to display the environment variables.
 
 You can find the credentials in the <a href="http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES" target="_blank">VCAP_SERVICES</a> key.
 
-<pre class="terminal">
+```
 $ cf env my-app
 Getting env variables for app my-app in org snyk / space snyk as admin...
 OK
@@ -79,14 +82,14 @@ System-Provided:
  }
 }
 ...
-</pre>
+```
 
 ##<a id='scanning'></a> Scanning Your Dependencies
 
 When Snyk service is bound to your application every time you run `cf push APP-NAME`,
 Snyk will scan your open source dependencies and will break the deployment if Snyk finds vulnerabilties.
 
-<pre class="terminal">
+```
 $ cf push my-app
 Updating app my-app in org snyk / space snyk as admin...
 ...
@@ -105,7 +108,7 @@ Run `snyk wizard` to explore remediation options.
 Tested 576 dependencies for known vulnerabilities, found 34 vulnerabilities, 111 vulnerable paths.
 <font color=red>**ERROR**</font> Snyk found vulnerabilties. Failing build...
 <font color=red>**ERROR**</font> After Compile: exit status 1
-</pre>
+```
 
 ### Optional Paramaters
 In order to enable optional parameters to your application
@@ -119,4 +122,4 @@ set-env command (e.g `cf set-env APP-NAME SNYK_DONT_BREAK_BUILD true`)
 ### Projects on Snyk
 If you enable the SNYK_MONITOR_BUILD option this will create a project in your Snyk dashboard where you can view the results of the scan.
 
-<img src="images/snyk_project.png"></img>
+![alt-text=""](images/snyk_project.png)
